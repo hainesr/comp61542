@@ -30,7 +30,9 @@ Do not forget to add the current directory by appending the class path with ":."
 (It may be different in Windows).
 
 [1] http://edutechwiki.unige.ch/en/XQuery_tutorial_-_basics
+
 [2] http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+
 [3] ?
 
 
