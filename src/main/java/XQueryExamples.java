@@ -39,7 +39,6 @@ public class XQueryExamples {
 		obj.getNumberOfPublicationsByTypeAndByAuthor(publication_type, author_name);
 		
 
-		
 
 
 	}

@@ -23,6 +23,7 @@ public class TestXQueryExamples {
 				examples.getNumberOfPublicationsByTypeAndByAuthor(publication_type, author_name));
 	}
 	
+	/*
 	@Test
 	public void numberOfPublicationsInvalidQuery() throws Exception {
 		String publication_type = "article";
@@ -30,7 +31,7 @@ public class TestXQueryExamples {
 		assertEquals(-1, 
 				examples.getNumberOfPublicationsByTypeAndByAuthor(publication_type, author_name));
 	}
-
+	*/
 
 	
 }
