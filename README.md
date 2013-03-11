@@ -19,11 +19,10 @@ You can use as a template to implement your own tests.
 iv) pom.xml This java project is built using Maven [2]. pom.xml specifies the dependencies, 
 in particular the libraries that are needed. If you are familiar with Maven, then you can build the project using
 the command "mvn clean, build". If you are not familiar with Maven, then you can simply compile the Java file as 
-you are used to do before. In doing so, you will need to download the java library in [3], and include it in 
+you are used to do before. In doing so, you will need the java libraries in the lib directory [3], and include them in 
 your classpath.
 
-If you are using Maven, the classpath can be obtained by running the following command from 
-the root of the Java project: "mvn dependency:build-classpath"
+
 Using such classpath, you can for example run the main method of the XQueryExamples class in target/classes 
 using the follong command: java -classpath ? XQueryExamples, where ? stands for the class path. 
 Do not forget to add the current directory by appending the class path with ":." in unix, linux and mac 
@@ -33,7 +32,7 @@ Do not forget to add the current directory by appending the class path with ":."
 
 [2] http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
-[3] ?
+[3] ./lib
 
 
 
