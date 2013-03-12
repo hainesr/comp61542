@@ -57,6 +57,8 @@ public class XQueryExamples {
 		String query = "for $x in fn:distinct-values(doc(\"" +xml_file+ "\")//author) " +
 						"order by $x "+
 						"return $x";
+		
+		System.out.println("XQuery query:"+query);
 				
 		try{
 			XQDataSource ds = new SaxonXQDataSource();
@@ -93,7 +95,9 @@ public class XQueryExamples {
 		String query = "for $x in doc(\"" +xml_file+ "\")/dblp/* " +
 						"where $x/author = '"+author_name+"' "+
 						"return $x";
-				
+		
+		System.out.println("XQuery query:"+query);
+		
 		try{
 			XQDataSource ds = new SaxonXQDataSource();
 			XQConnection conn = ds.getConnection();
@@ -122,7 +126,8 @@ public class XQueryExamples {
 		String query = "for $x in doc(\"" +xml_file+ "\")/dblp " +
 						"return count(for $y in $x/* where $y/author = '"+author_name+"' return 1)";
 				
-				
+		System.out.println("XQuery query:"+query);
+		
 		try{
 			XQDataSource ds = new SaxonXQDataSource();
 			XQConnection conn = ds.getConnection();
@@ -152,7 +157,9 @@ public class XQueryExamples {
 		
 		String query = "for $x in doc(\"" +xml_file+ "\")/dblp " +
 				"return count(for $y in $x/"+publication_type+" return 1)";
-				
+		
+		System.out.println("XQuery query:"+query);
+		
 		try{
 				XQDataSource ds = new SaxonXQDataSource();
 				XQConnection conn = ds.getConnection();
@@ -180,7 +187,9 @@ public class XQueryExamples {
 		
 		String query = "for $x in doc(\"" +xml_file+ "\")/dblp " +
 				"return count(for $y in $x/"+publication_type+" where $y/author = '"+author_name+"' return 1)";
-				
+		
+		System.out.println("XQuery query:"+query);
+		
 		try{
 				XQDataSource ds = new SaxonXQDataSource();
 				XQConnection conn = ds.getConnection();
