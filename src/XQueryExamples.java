@@ -10,7 +10,7 @@ import net.sf.saxon.xqj.SaxonXQDataSource;
 
 public class XQueryExamples {
 	
-	String xml_file = getClass().getResource("dblp_curated_sample.xml").toExternalForm();
+        String xml_file_name = "input/dblp_curated_sample.xml";
 	
 	public static void main(String[] args) {
 		
@@ -54,7 +54,7 @@ public class XQueryExamples {
 	 */	
 	public void getListOfAuthors(){
 		
-		String query = "for $x in fn:distinct-values(doc(\"" +xml_file+ "\")//author) " +
+		String query = "for $x in fn:distinct-values(doc(\"" +xml_file_name+ "\")//author) " +
 						"order by $x "+
 						"return $x";
 		
@@ -92,7 +92,7 @@ public class XQueryExamples {
 	 */	
 	public void getPublicationsByAuthor(String author_name){
 		
-		String query = "for $x in doc(\"" +xml_file+ "\")/dblp/* " +
+		String query = "for $x in doc(\"" +xml_file_name+ "\")/dblp/* " +
 						"where $x/author = '"+author_name+"' "+
 						"return $x";
 		
@@ -123,7 +123,7 @@ public class XQueryExamples {
 	 */	
 	public void getNumberOfPublicationsByAuthor(String author_name){
 		
-		String query = "for $x in doc(\"" +xml_file+ "\")/dblp " +
+		String query = "for $x in doc(\"" +xml_file_name+ "\")/dblp " +
 						"return count(for $y in $x/* where $y/author = '"+author_name+"' return 1)";
 				
 		System.out.println("XQuery query:"+query);
@@ -155,7 +155,7 @@ public class XQueryExamples {
 	 */
 	private void getNumberOfPublicationsByType(String publication_type) {
 		
-		String query = "for $x in doc(\"" +xml_file+ "\")/dblp " +
+		String query = "for $x in doc(\"" +xml_file_name+ "\")/dblp " +
 				"return count(for $y in $x/"+publication_type+" return 1)";
 		
 		System.out.println("XQuery query:"+query);
@@ -185,7 +185,7 @@ public class XQueryExamples {
 	 */
 	public int getNumberOfPublicationsByTypeAndByAuthor(String publication_type, String author_name) {
 		
-		String query = "for $x in doc(\"" +xml_file+ "\")/dblp " +
+		String query = "for $x in doc(\"" +xml_file_name+ "\")/dblp " +
 				"return count(for $y in $x/"+publication_type+" where $y/author = '"+author_name+"' return 1)";
 		
 		System.out.println("XQuery query:"+query);
@@ -213,7 +213,5 @@ public class XQueryExamples {
 		}
 		
 	}
-
-	
 
 }
